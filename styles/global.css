@@ -5,12 +5,12 @@
 }
 
 :root {
+  /*Colors*/
   --red: #e3646e;
   --purple: #bb72e9;
   --blue: #3996db;
   --green: #82bc4f;
   --yellow: #eabd5f;
-
   --gray-100: #e2e4e9;
   --gray-200: #c0c4ce;
   --gray-300: #878ea1;
@@ -18,21 +18,48 @@
   --gray-500: #16181d;
   --gray-600: #0d0e11;
 
+  /*fonts*/
   --title: "Asap", sans-serif;
-  --subtitle: 20px/1.2 "Inconsolata", monospace;
+  --subtitle: "Inconsolata", monospace;
   --text: "Maven Pro", sans-serif;
+  /*fonts-values*/
   --title-lg: 700 56px/120% var(--title);
   --title-md: 700 24px/120% var(--title);
   --title-sm: 700 16px/120% var(--title);
   --text-md: 400 16px/140% var(--text);
   --text-sm: 400 14px/140% var(--text);
+  --subtitle-md: 400 20px/1.2 var(--subtitle);
+  --subtitle-sm: 400 10px/1.2 var(--subtitle);
 
-  --title-mobile: "Asap", sans-serif;
-  --subtitle-mobile: 15px/1.5 "Inconsolata", monospace;
-  --text-mobile: "Maven Pro", sans-serif;
-  --title-lg-mobile: 700 26px/120% var(--title);
-  --title-md-mobile: 700 18px/120% var(--title);
-  --title-sm-mobile: 700 16px/120% var(--title);
-  --text-md-mobile: 400 12px/140% var(--text);
-  --text-sm-mobile: 400 14px/140% var(--text);
+  /*paddings*/
+  --px-lg: 1.5rem;
+  --py-sm: 0.2rem;
+  --py-md: 2rem;
+  --py-lg: 3rem;
+
+  /*grids*/
+}
+
+:root {
+  /*fonts*/
+  --title-lg: 700 56px/120% var(--title);
+  --title-md: 700 24px/120% var(--title);
+  --title-sm: 700 16px/120% var(--title);
+  --text-md: 400 16px/140% var(--text);
+  --text-sm: 400 14px/140% var(--text);
+  --subtitle-md: 400 20px/1.2 var(--subtitle);
+  --subtitle-sm: 400 10px/1.2 var(--subtitle);
+
+  /*paddings*/
+  --px-lg: 2rem;
+  --py-sm: 0.5rem;
+  --py-md: 3.5rem;
+  --py-lg: 4.5rem;
+
+  /*grids*/
+}
+
+body {
+  color: var(--gray-100);
+  background-color: var(--gray-400);
 }
