@@ -6,6 +6,7 @@
 
 :root {
   /*Colors*/
+
   --red: #e3646e;
   --purple: #bb72e9;
   --blue: #3996db;
@@ -23,43 +24,51 @@
   --subtitle: "Inconsolata", monospace;
   --text: "Maven Pro", sans-serif;
   /*fonts-values*/
-  --title-lg: 700 56px/120% var(--title);
-  --title-md: 700 24px/120% var(--title);
-  --title-sm: 700 16px/120% var(--title);
-  --text-md: 400 16px/140% var(--text);
-  --text-sm: 400 14px/140% var(--text);
-  --subtitle-md: 400 20px/1.2 var(--subtitle);
-  --subtitle-sm: 400 10px/1.2 var(--subtitle);
+  --title-lg: 700 2rem/120% var(--title);
+  --title-md: 700 1.5rem/120% var(--title);
+  --title-sm: 700 1rem/120% var(--title);
+  --text-md: 400 1rem/140% var(--text);
+  --text-sm: 400 0.7rem/140% var(--text);
+  --subtitle-sm: 400 0.8rem/1.2 var(--subtitle);
 
   /*paddings*/
+  --px-xl: 2rem;
   --px-lg: 1.5rem;
-  --py-sm: 0.2rem;
+  --px-md: 1rem;
+  --py-sm: 0.4rem;
   --py-md: 2rem;
-  --py-lg: 3rem;
-
-  /*grids*/
-}
-
-:root {
-  /*fonts*/
-  --title-lg: 700 56px/120% var(--title);
-  --title-md: 700 24px/120% var(--title);
-  --title-sm: 700 16px/120% var(--title);
-  --text-md: 400 16px/140% var(--text);
-  --text-sm: 400 14px/140% var(--text);
-  --subtitle-md: 400 20px/1.2 var(--subtitle);
-  --subtitle-sm: 400 10px/1.2 var(--subtitle);
-
-  /*paddings*/
-  --px-lg: 2rem;
-  --py-sm: 0.5rem;
-  --py-md: 3.5rem;
-  --py-lg: 4.5rem;
+  --py-lg: 5rem;
 
   /*grids*/
 }
 
 body {
   color: var(--gray-100);
-  background-color: var(--gray-400);
+  background-color: var(--gray-500);
+}
+
+@media (width>=80em) {
+  :root {
+    /*fonts*/
+    --title-lg: 700 3.5rem/120% var(--title);
+    --title-md: 700 1.5rem/120% var(--title);
+    --title-sm: 700 1rem/120% var(--title);
+    --text-md: 400 1rem/140% var(--text);
+    --text-sm: 400 1rem/140% var(--text);
+    --subtitle-sm: 400 1.2rem/1.2 var(--subtitle);
+
+    /*paddings*/
+    --px-xl: 14rem;
+    --px-lg: 2rem;
+    --py-sm: 0.5rem;
+    --py-md: 3.5rem;
+    --py-lg: 9rem;
+
+    /*grids*/
+  }
+
+  body {
+    color: var(--gray-100);
+    background-color: var(--gray-500);
+  }
 }

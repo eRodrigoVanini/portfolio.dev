@@ -1,0 +1,22 @@
+.card-skills {
+  background-color: var(--gray-400);
+  font: var(--text-md);
+  color: var(--gray-200);
+  padding-block: var(--py-sm);
+  padding-inline: var(--px-md);
+  column-gap: 0.5rem;
+  border-radius: 999px;
+  align-items: center;
+}
+
+@media (width >= 80em) {
+  .card-skills {
+    background-color: var(--gray-400);
+    font: var(--text-md);
+    color: var(--gray-200);
+    padding: 1rem;
+    column-gap: 0.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+  }
+}

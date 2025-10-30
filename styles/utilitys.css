@@ -2,7 +2,25 @@
   --max-width: 375px;
   width: min(var(--max-width), 100% - var(--px-lg) * 2);
   margin: auto;
-  border: solid violet;
+
+  overflow: scroll;
+}
+
+.title-lg {
+  font: var(--title-lg);
+}
+
+.subtitle-sm {
+  font: var(--subtitle-sm);
+}
+
+.text-sm {
+  font: var(--text-sm);
+}
+
+.devname {
+  font: var(--subtitle-sm);
+  color: var(--red);
 }
 
 .py-sm {
@@ -17,8 +35,20 @@
   padding-block: var(--py-lg);
 }
 
+.px-xl {
+  padding-inline: var(--px-xl);
+}
+
 .px-lg {
-  padding-block: var(--px-lg);
+  padding-inline: var(--px-lg);
+}
+
+.gap-8 {
+  gap: 0.5rem;
+}
+
+.gap-16 {
+  gap: 1rem;
 }
 
 .grid {
@@ -27,6 +57,23 @@
 
 .flex {
   display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.margin-auto {
+  margin: auto;
 }
 
 .desktop-only {
