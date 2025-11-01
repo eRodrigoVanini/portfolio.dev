@@ -32,10 +32,12 @@
   }
 }
 
-ul {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#about {
+  & ul {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 img.next-section {
@@ -49,9 +51,12 @@ img.next-section {
     height: 8rem;
     object-fit: cover;
   }
-  ul {
-    margin-top: 4.5rem;
-    display: flex;
+
+  #about {
+    & ul {
+      margin-top: 4.5rem;
+      display: flex;
+    }
   }
 
   img.next-section {
@@ -60,6 +65,6 @@ img.next-section {
 
   .about-texts {
     margin-top: 3rem;
-    width: 52rem;;
+    width: 52rem;
   }
 }

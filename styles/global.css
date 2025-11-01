@@ -29,23 +29,19 @@
   --title-sm: 700 1rem/120% var(--title);
   --text-md: 400 1rem/140% var(--text);
   --text-sm: 400 0.7rem/140% var(--text);
-  --subtitle-sm: 400 0.8rem/1.2 var(--subtitle);
+  --subtitle-sm: 0.7rem/120% var(--subtitle);
 
   /*paddings*/
   --px-xl: 2rem;
   --px-lg: 1.5rem;
   --px-md: 1rem;
+
   --py-sm: 0.4rem;
   --py-md: 2rem;
   --py-lg: 5rem;
-
-  /*grids*/
 }
 
 body {
-  color: var(--gray-100);
-  background-image: url(../assets/images/Background_Intro.png);
-  background-size: contain;
 }
 
 @media (width>=80em) {
@@ -56,7 +52,7 @@ body {
     --title-sm: 700 1rem/120% var(--title);
     --text-md: 400 1rem/140% var(--text);
     --text-sm: 400 1rem/140% var(--text);
-    --subtitle-sm: 400 1.2rem/1.2 var(--subtitle);
+    --subtitle-sm: 0.9rem/120% var(--subtitle);
 
     /*paddings*/
     --px-xl: 14rem;
@@ -65,7 +61,7 @@ body {
     --py-md: 3.5rem;
     --py-lg: 9rem;
 
-    /*grids*/
+    --max-width: 10px;
   }
 
   body {

@@ -9,6 +9,16 @@
   align-items: center;
 }
 
+.card-projects {
+  background-color: var(--gray-400);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
+.card-services {
+  border: solid 2px var(--gray-500);
+}
+
 @media (width >= 80em) {
   .card-skills {
     background-color: var(--gray-400);
@@ -18,5 +28,13 @@
     column-gap: 0.5rem;
     height: 2.5rem;
     border-radius: 999px;
+  }
+
+  .card-projects {
+    background-color: var(--gray-400);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    width: 330px;
+    height: 280px;
   }
 }

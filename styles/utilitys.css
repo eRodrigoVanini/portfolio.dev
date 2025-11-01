@@ -53,6 +53,10 @@
   display: grid;
 }
 
+.ul {
+  list-style: none;
+}
+
 .flex {
   display: flex;
 }
@@ -70,12 +74,24 @@
   text-align: center;
 }
 
+.justify-items {
+  justify-items: center;
+}
+
 .margin-auto {
   margin: auto;
 }
 
 .desktop-only {
   display: none;
+}
+
+.headers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  font: var(--subtitle-sm);
 }
 
 /*add grid display*/
