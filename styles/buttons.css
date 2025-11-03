@@ -13,14 +13,28 @@
   font: var(--text-sm);
   color: var(--btn-bg-color);
   padding: 1rem;
+  transition: 0.3s;
+  cursor: pointer; /* Adicione isso para o cursor de link */
 }
 
 .bttn-socials:hover {
   border: 1px solid var(--blue);
+}
 
-  & img {
-    content: url("../assets/icons/LinkedinLogoHover.svg");
-  }
+#linkedinButton:hover :first-child {
+  content: url("../assets/icons/LinkedinLogoHover.svg");
+}
+
+#instagramButton:hover :first-child {
+  content: url("../assets/icons/InstagramLogoHover.svg");
+}
+
+#gitHubButton:hover :first-child {
+  content: url("../assets/icons/GithubLogoHover.svg");
+}
+
+#emailButton:hover :first-child {
+  content: url("../assets/icons/EnvelopeSimpleHover.svg");
 }
 
 @media (width>=80em) {

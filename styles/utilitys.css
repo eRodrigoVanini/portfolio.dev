@@ -4,6 +4,8 @@
   margin: auto;
 }
 
+
+
 .title-lg {
   font: var(--title-lg);
 }
@@ -90,10 +92,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;;
+  padding: 3rem;
   row-gap: 8px;
   text-align: center;
-  
+
   & h2 {
     font: var(--subtitle);
   }
@@ -130,12 +132,12 @@
   }
 
   .headers {
-  & p {
-    font: var(--title-md);
-  }
+    & p {
+      font: var(--title-md);
+    }
 
-  & span {
-    font: var(--text-md);
+    & span {
+      font: var(--text-md);
+    }
   }
-}
 }

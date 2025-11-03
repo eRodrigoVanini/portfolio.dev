@@ -14,18 +14,24 @@ section#contacts {
     row-gap: 16px;
     align-items: center;
     & li {
+      font: var(--text-sm);
+      color: var(--gray-200);
       display: flex;
       width: 280px;
       height: 68px;
       justify-content: center;
     }
   }
+
+  & main {
+    padding-bottom: 5rem;
+  }
 }
 
 @media (width>=80em) {
-  #contacts {
-    & li {
-      width: 6000px;
+  section#contacts {
+    & main {
+      padding-bottom: 8rem;
     }
   }
 }
