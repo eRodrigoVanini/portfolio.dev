@@ -1,0 +1,31 @@
+section#contacts {
+  background-image: url(../assets/images/Background_Contacts.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  & h2 {
+    color: var(--purple);
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    align-items: center;
+    & li {
+      display: flex;
+      width: 280px;
+      height: 68px;
+      justify-content: center;
+    }
+  }
+}
+
+@media (width>=80em) {
+  #contacts {
+    & li {
+      width: 6000px;
+    }
+  }
+}

@@ -90,8 +90,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
-  font: var(--subtitle-sm);
+  padding: 3rem;;
+  row-gap: 8px;
+  text-align: center;
+  
+  & h2 {
+    font: var(--subtitle);
+  }
+  & p {
+    font: var(--title-sm);
+    color: var(--gray-100);
+    margin-top: 8px;
+  }
+  & span {
+    font: var(--text-sm);
+    color: var(--gray-300);
+  }
 }
 
 /*add grid display*/
@@ -114,4 +128,14 @@
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
+
+  .headers {
+  & p {
+    font: var(--title-md);
+  }
+
+  & span {
+    font: var(--text-md);
+  }
+}
 }

@@ -1,3 +1,11 @@
+  section#about {
+    background-image: url(../assets/images/Background_Intro.png);
+    background-size: 100% 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    
+  }
+
 .profile-image {
   margin-top: 1rem;
   border: 3px solid var(--red);
@@ -45,6 +53,8 @@ img.next-section {
 }
 
 @media (width >= 80em) {
+
+
   .profile-image {
     margin-top: 5rem;
     width: 8rem;
@@ -53,6 +63,7 @@ img.next-section {
   }
 
   #about {
+
     & ul {
       margin-top: 4.5rem;
       display: flex;

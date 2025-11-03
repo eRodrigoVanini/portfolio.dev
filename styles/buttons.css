@@ -1,35 +1,30 @@
-.bttn {
-  --btn-bg-color: var(--gray-200);
+.bttn-socials {
   text-decoration: none;
   border: none;
   background-color: var(--gray-400);
   align-items: center;
-  width: fit-content;
+  width: 400px;
+  height: 68px;
   border-radius: 0.5rem;
   display: grid;
-  text-align: left;
-}
-
-.bttn-md {
   grid-template-columns: 1fr 3fr 1fr;
   column-gap: 8px;
+  text-align: left;
   font: var(--text-sm);
   color: var(--btn-bg-color);
   padding: 1rem;
 }
 
-.bttn-lg {
-  grid-template-columns: 1fr 5fr 1fr;
-  column-gap: 12px;
-  font: var(--text-sm);
-  color: var(--btn-bg-color);
-  padding: 1rem;
-}
-
-.bttn:hover {
+.bttn-socials:hover {
   border: 1px solid var(--blue);
 
-  #linkedin-icon {
+  & img {
     content: url("../assets/icons/LinkedinLogoHover.svg");
+  }
+}
+
+@media (width>=80em) {
+  .bttn-socials {
+    width: 900px;
   }
 }

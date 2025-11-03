@@ -17,6 +17,24 @@
 
 .card-services {
   border: solid 2px var(--gray-500);
+  width: 280px;
+  height: 155px;
+  border-radius: 12px;
+  padding: 20px;
+ 
+  & img {
+margin-bottom: 20px;
+  }
+
+  & h3 {
+  font: var(--title-sm);
+  color: var(--gray-100);
+  margin-bottom: 10px;}
+
+  & p {
+    font: var(--text-sm);
+    color: var(--gray-300);
+  }
 }
 
 @media (width >= 80em) {
@@ -36,5 +54,12 @@
     padding: 0.75rem;
     width: 330px;
     height: 280px;
+  }
+
+  .card-services {
+    width: 280px;
+    height: 155px;
+    padding: 20px 0 20px 20px;
+
   }
 }

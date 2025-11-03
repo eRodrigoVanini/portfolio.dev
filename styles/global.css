@@ -41,9 +41,6 @@
   --py-lg: 5rem;
 }
 
-body {
-}
-
 @media (width>=80em) {
   :root {
     /*fonts*/
@@ -51,7 +48,7 @@ body {
     --title-md: 700 1.5rem/120% var(--title);
     --title-sm: 700 1rem/120% var(--title);
     --text-md: 400 1rem/140% var(--text);
-    --text-sm: 400 1rem/140% var(--text);
+    --text-sm: 400 0.8rem/140% var(--text);
     --subtitle-sm: 0.9rem/120% var(--subtitle);
 
     /*paddings*/
@@ -62,12 +59,5 @@ body {
     --py-lg: 9rem;
 
     --max-width: 10px;
-  }
-
-  body {
-    color: var(--gray-100);
-    background-image: url(../assets/images/Background_Intro.png);
-    background-size: cover;
-    background-repeat: no-repeat;
   }
 }
