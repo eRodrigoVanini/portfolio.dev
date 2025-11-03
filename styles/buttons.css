@@ -11,7 +11,7 @@
   column-gap: 8px;
   text-align: left;
   font: var(--text-sm);
-  color: var(--btn-bg-color);
+  color: var(--gray-200);
   padding: 1rem;
   transition: 0.3s;
   cursor: pointer; /* Adicione isso para o cursor de link */

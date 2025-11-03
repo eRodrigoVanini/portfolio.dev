@@ -1,11 +1,12 @@
-  section#about {
-    background-image: url(../assets/images/Background_Intro.png);
-    background-size: 100% 100%;
-    background-position:center;
-    background-repeat: no-repeat;
-    
-  }
+/* Background da seção */
+section#about {
+  background-image: url(../assets/images/Background_Intro.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+/* Imagem de perfil */
 .profile-image {
   margin-top: 1rem;
   border: 3px solid var(--red);
@@ -16,6 +17,7 @@
   object-fit: cover;
 }
 
+/* Container do perfil */
 #profile {
   position: relative;
 }
@@ -26,48 +28,46 @@
   right: 0;
 }
 
+/* Textos da seção about */
 .about-texts {
   margin-top: 1.7rem;
-  & p:nth-child(1) {
-    color: var(--gray-200);
-  }
-
-  & h1 {
-    color: var(--gray-100);
-  }
-  & p:nth-child(3) {
-    color: var(--gray-300);
-  }
 }
 
-#about {
-  & ul {
-    margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+.about-texts p:nth-child(1) {
+  color: var(--gray-200);
 }
 
+.about-texts h1 {
+  color: var(--gray-100);
+}
+
+.about-texts p:nth-child(3) {
+  color: var(--gray-300);
+}
+
+/* Lista na seção about */
+#about ul {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Ícone de próxima seção */
 img.next-section {
   margin-top: 2rem;
 }
 
+/* Media Query Desktop */
 @media (width >= 80em) {
-
-
   .profile-image {
     margin-top: 5rem;
     width: 8rem;
     height: 8rem;
-    object-fit: cover;
   }
 
-  #about {
-
-    & ul {
-      margin-top: 4.5rem;
-      display: flex;
-    }
+  #about ul {
+    margin-top: 4.5rem;
+    display: flex;
   }
 
   img.next-section {

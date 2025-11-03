@@ -4,8 +4,6 @@
   margin: auto;
 }
 
-
-
 .title-lg {
   font: var(--title-lg);
 }
@@ -97,7 +95,7 @@
   text-align: center;
 
   & h2 {
-    font: var(--subtitle);
+    font: var(--subtitle-sm);
   }
   & p {
     font: var(--title-sm);
@@ -132,6 +130,9 @@
   }
 
   .headers {
+    & h2 {
+      font: var(--subtitle-md);
+    }
     & p {
       font: var(--title-md);
     }

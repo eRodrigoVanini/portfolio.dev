@@ -7,19 +7,6 @@
     color: var(--red);
   }
 
-  & h3 {
-    font: var(--title-sm);
-    color: var(--gray-100);
-    margin-block: 1.25rem 0.5rem;
-  }
-  & p {
-    color: var(--gray-200);
-  }
-
-  & img {
-    border-radius: 0.5rem;
-  }
-
   & ul {
     margin-top: 20px;
     display: flex;
@@ -29,12 +16,7 @@
     gap: 1.2rem;
     margin-bottom: 70px;
   }
-  & img {
-    width: 306px;
-    height: 156px;
-    max-width: 98%;
-    object-fit: contain;
-  }
+
 }
 
 @media (width>=80em) {

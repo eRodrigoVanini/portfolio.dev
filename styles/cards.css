@@ -13,6 +13,22 @@
   background-color: var(--gray-400);
   border-radius: 0.75rem;
   padding: 0.75rem;
+  & h3 {
+    font: var(--title-sm);
+    color: var(--gray-100);
+    margin-block: 1.25rem 0.5rem;
+  }
+  & p {
+    font: var(--text-sm);
+    color: var(--gray-200);
+  }
+  & img {
+    border-radius: 0.5rem;
+    width: 306px;
+    height: 156px;
+    max-width: 98%;
+    object-fit: contain;
+  }
 }
 
 .card-services {
@@ -21,15 +37,16 @@
   height: 155px;
   border-radius: 12px;
   padding: 20px;
- 
+
   & img {
-margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   & h3 {
-  font: var(--title-sm);
-  color: var(--gray-100);
-  margin-bottom: 10px;}
+    font: var(--title-sm);
+    color: var(--gray-100);
+    margin-bottom: 10px;
+  }
 
   & p {
     font: var(--text-sm);
@@ -60,6 +77,5 @@ margin-bottom: 20px;
     width: 280px;
     height: 155px;
     padding: 20px 0 20px 20px;
-
   }
 }
