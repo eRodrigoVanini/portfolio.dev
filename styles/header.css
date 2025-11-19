@@ -9,7 +9,6 @@ section#about {
 /* Imagem de perfil */
 .profile-image {
   margin-top: 1rem;
-  border: 3px solid var(--red);
   border-radius: 50%;
   padding: 0.4rem;
   width: 6rem;
@@ -35,14 +34,26 @@ section#about {
 
 .about-texts p:nth-child(1) {
   color: var(--gray-200);
+  width: 80%;
+
+  margin: auto;
 }
 
 .about-texts h1 {
   color: var(--gray-100);
 }
 
-.about-texts p:nth-child(3) {
+.about-texts p:nth-child(4) {
   color: var(--gray-300);
+}
+
+.about-texts p:nth-child(3) {
+  position: absolute;
+  transform: translate3d(14.5rem, -2rem, 0);
+
+  font-style: italic;
+  font-weight: bold;
+  color: var(--red);
 }
 
 /* Lista na seção about */
@@ -77,5 +88,10 @@ img.next-section {
   .about-texts {
     margin-top: 3rem;
     width: 52rem;
+  }
+
+  .about-texts p:nth-child(3) {
+    margin-top: 0.5rem;
+    transform: translate3d(45.3rem, -3.1rem, 0);
   }
 }
