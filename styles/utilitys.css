@@ -4,6 +4,10 @@
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 .title-lg {
   font: var(--title-lg);
 }
