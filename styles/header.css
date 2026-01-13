@@ -37,7 +37,21 @@ section#about {
   width: 16rem;
 
   margin-top: 0.5rem;
+
   position: relative;
+
+}
+
+.about-texts span:nth-child(1) {
+  font: var(--title-md);
+
+  height: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.3rem;
 }
 
 .about-texts p:nth-child(1) {
@@ -61,7 +75,6 @@ section#about {
 
 .about-texts p:nth-child(2) {
   margin-top: 0.2rem;
-
 
   color: var(--gray-300);
 }
