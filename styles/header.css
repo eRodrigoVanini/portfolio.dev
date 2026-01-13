@@ -34,9 +34,10 @@ section#about {
 
 /* Textos da seção about */
 .about-texts {
+  width: 16rem;
+
   margin-top: 0.5rem;
   position: relative;
-  border: 2px solid green;
 }
 
 .about-texts p:nth-child(1) {
@@ -52,18 +53,15 @@ section#about {
   color: var(--gray-100);
 }
 
-.about-texts p:nth-child(4) {
+.about-texts p:nth-child(3) {
   margin-top: 1.2rem;
 
   color: var(--gray-300);
 }
 
-.about-texts p:nth-child(3) {
-  border: 2px solid red;
-  
+.about-texts p:nth-child(2) {
   margin-top: 0.2rem;
 
-  font-style: italic;
 
   color: var(--gray-300);
 }
@@ -77,7 +75,7 @@ section#about {
 
 /* Ícone de próxima seção */
 img.next-section {
-  margin-top:4rem;
+  margin-top: 4rem;
 }
 
 /* Media Query Desktop */
@@ -101,5 +99,4 @@ img.next-section {
     margin-top: 1rem;
     width: 52rem;
   }
-
 }
