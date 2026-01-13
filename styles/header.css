@@ -9,11 +9,15 @@ section#about {
 /* Imagem de perfil */
 .profile-image {
   margin-top: 1rem;
+
   border: 2px solid var(--red);
   border-radius: 50%;
+
   padding: 0.4rem;
+
   width: 7rem;
   height: 7rem;
+
   object-fit: cover;
 }
 
@@ -31,6 +35,8 @@ section#about {
 /* Textos da seção about */
 .about-texts {
   margin-top: 0.5rem;
+  position: relative;
+  border: 2px solid green;
 }
 
 .about-texts p:nth-child(1) {
@@ -53,8 +59,8 @@ section#about {
 }
 
 .about-texts p:nth-child(3) {
-  position: absolute;
-  transform: translate3d(10.2rem, -1.2rem, 0);
+  border: 2px solid red;
+  
   margin-top: 0.2rem;
 
   font-style: italic;
@@ -96,7 +102,4 @@ img.next-section {
     width: 52rem;
   }
 
-  .about-texts p:nth-child(3) {
-    transform: translate3d(45.3rem, -3.1rem, 0);
-  }
 }
