@@ -2,33 +2,27 @@
   background-color: var(--gray-500);
   display: flex;
   flex-direction: column;
-
-  & h2 {
-    color: var(--red);
-  }
-
-  & ul {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-
-    gap: 1.2rem;
-    margin-bottom: 70px;
-  }
-
 }
 
-@media (width>=80em) {
-  #myProjects {
-    & ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-top: 30px;
-      margin-inline: auto;
-      gap: 12px;
-      width: 1040px;
-      height: 584px;
-    }
+#myProjects h2 {
+  color: var(--red);
+}
+
+#myProjects ul {
+  margin-top: 1.25rem;
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 4rem;
+}
+
+@media (width >= 80em) {
+  #myProjects ul {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1100px;
+    width: 100%;
+    margin-inline: auto;
+    gap: 1.5rem;
   }
 }
