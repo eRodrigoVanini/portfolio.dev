@@ -59,9 +59,11 @@
 
 .card-services {
   border: solid 2px var(--gray-500);
+  border-radius: 12px;
+
   width: 280px;
   height: 155px;
-  border-radius: 12px;
+
   padding: 20px;
 
   & img {
