@@ -88,7 +88,7 @@ section#about {
 
 /* Ícone de próxima seção */
 img.next-section {
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 /* Media Query Desktop */
@@ -105,7 +105,7 @@ img.next-section {
   }
 
   img.next-section {
-    margin-top: 6rem;
+    margin-top: 7rem;
   }
 
   .about-texts {
