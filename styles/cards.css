@@ -10,10 +10,17 @@
 }
 
 .card-projects {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+
   background-color: var(--gray-400);
+
   border: 1px solid var(--gray-500);
   border-radius: 0.75rem;
+
   padding: 0.9rem;
+
   transition: transform 200ms ease, box-shadow 200ms ease,
     border-color 200ms ease;
 }
@@ -84,14 +91,16 @@
     border-radius: 999px;
   }
 
-@media (width >= 80em) {
-  .card-projects {
-    padding: 1rem;
-  }
+  @media (width >= 80em) {
+    .card-projects {
+      width: 100%;
+      padding: 1rem;
+    }
 
-  .card-services {
-    width: 280px;
-    height: 155px;
-    padding: 20px 0 20px 20px;
+    .card-services {
+      width: 280px;
+      height: 155px;
+      padding: 20px 0 20px 20px;
+    }
   }
 }
