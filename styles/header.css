@@ -1,8 +1,6 @@
 /* Background da seção */
 section#about {
   background-color: var(--gray-500);
-  min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height - melhor para mobile */
   display: flex;
   align-items: center;
   justify-content: center;
