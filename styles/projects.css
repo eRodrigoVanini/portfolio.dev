@@ -2,27 +2,186 @@
   background-color: var(--gray-500);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 #myProjects h2 {
   color: var(--red);
 }
 
-#myProjects ul {
-  margin-top: 1.25rem;
-  list-style: none;
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: 1fr;
-  margin-bottom: 4rem;
+#myProjects main {
+  padding-bottom: 3rem;
 }
 
-@media (width >= 80em) {
-  #myProjects ul {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    max-width: 1100px;
-    width: 100%;
-    margin-inline: auto;
-    gap: 1.5rem;
+/* Slider Container */
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+/* Slider Wrapper - área visível */
+.slider-wrapper {
+  width: 100%;
+  max-width: 340px;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* Slider Track - trilha com os cards */
+.slider-track {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 1rem 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-track .card-projects {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+/* Botões de navegação */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-400);
+  background-color: var(--gray-500);
+  color: var(--gray-200);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.slider-btn:hover {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: var(--gray-100);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider-btn-prev {
+  left: 0.25rem;
+}
+
+.slider-btn-next {
+  right: 0.25rem;
+}
+
+/* Indicadores do slider */
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.slider-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--gray-400);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-indicator:hover {
+  background-color: var(--gray-300);
+  transform: scale(1.2);
+}
+
+.slider-indicator.active {
+  background-color: var(--red);
+  width: 26px;
+  border-radius: 5px;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .slider-wrapper {
+    max-width: 680px;
+  }
+
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .slider-btn-prev {
+    left: 1rem;
+  }
+
+  .slider-btn-next {
+    right: 1rem;
+  }
+
+  .slider-container {
+    padding: 0 2.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 80em) {
+  .slider-container {
+    max-width: 1200px;
+    padding: 0 4rem;
+  }
+
+  .slider-wrapper {
+    max-width: 1040px;
+  }
+
+  .slider-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .slider-btn-prev {
+    left: 0;
+  }
+
+  .slider-btn-next {
+    right: 0;
+  }
+
+  .slider-indicator {
+    width: 12px;
+    height: 12px;
+  }
+
+  .slider-indicator.active {
+    width: 30px;
+  }
+
+  #myProjects main {
+    padding-bottom: 5rem;
   }
 }

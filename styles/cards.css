@@ -10,21 +10,18 @@
 }
 
 .card-projects {
-  width: 90%;
-  height: 100%;
-  margin: auto;
-
+  width: 280px;
+  min-width: 280px;
+  height: auto;
+  margin: 0;
   background-color: var(--gray-400);
-
   border: 1px solid var(--gray-500);
   border-radius: 0.75rem;
-
-  padding: 0.9rem;
-
+  padding: 0.875rem;
   transition:
-    transform 200ms ease,
-    box-shadow 200ms ease,
-    border-color 200ms ease;
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
 }
 
 .card-projects figure {
@@ -34,10 +31,18 @@
   height: 100%;
 }
 
+.card-projects figure a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+
 .card-projects img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 0.65rem;
+  border-radius: 0.625rem;
   object-fit: cover;
 }
 
@@ -51,15 +56,26 @@
   font: var(--text-sm);
   color: var(--gray-200);
   margin: 0;
+  line-height: 1.5;
 }
 
 .card-projects:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(227, 100, 110, 0.12);
   border-color: var(--gray-300);
 }
 
-@media (width >= 80em) {
+/* Tablet */
+@media (min-width: 640px) {
+  .card-projects {
+    width: 310px;
+    min-width: 310px;
+    padding: 0.9rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 80em) {
   .card-skills {
     background-color: var(--gray-400);
     font: var(--text-md);
@@ -70,10 +86,14 @@
     border-radius: 999px;
   }
 
-  @media (width >= 80em) {
-    .card-projects {
-      width: 100%;
-      padding: 1rem;
-    }
+  .card-projects {
+    width: 330px;
+    min-width: 330px;
+    padding: 1rem;
+  }
+
+  .card-projects:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(227, 100, 110, 0.15);
   }
 }
