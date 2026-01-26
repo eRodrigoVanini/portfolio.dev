@@ -4,27 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".slider-btn-prev");
   const nextBtn = document.querySelector(".slider-btn-next");
   const indicatorsContainer = document.querySelector(".slider-indicators");
+  const sliderWrapper = document.querySelector(".slider-wrapper");
 
   if (!sliderTrack || slides.length === 0) return;
 
   let currentIndex = 0;
-  const totalSlides = slides.length;
   let isAnimating = false;
   let isDragging = false;
   let startX = 0;
   let scrollLeft = 0;
-
-  // Criar indicadores dinamicamente
-  slides.forEach((_, index) => {
-    const indicator = document.createElement("button");
-    indicator.classList.add("slider-indicator");
-    indicator.setAttribute("aria-label", `Ir para projeto ${index + 1}`);
-    if (index === 0) indicator.classList.add("active");
-    indicator.addEventListener("click", () => goToSlide(index));
-    indicatorsContainer.appendChild(indicator);
-  });
-
-  const indicators = document.querySelectorAll(".slider-indicator");
 
   // Calcular largura do card + gap
   function getSlideWidth() {
@@ -34,8 +22,38 @@ document.addEventListener("DOMContentLoaded", () => {
     return slide.offsetWidth + gap;
   }
 
+  // Calcular o scroll máximo possível
+  function getMaxScroll() {
+    return sliderTrack.scrollWidth - sliderWrapper.offsetWidth;
+  }
+
+  // Calcular quantos "passos" são necessários para ver todos os cards
+  function getTotalSteps() {
+    const slideWidth = getSlideWidth();
+    const maxScroll = getMaxScroll();
+    return Math.ceil(maxScroll / slideWidth) + 1;
+  }
+
+  // Criar/atualizar indicadores dinamicamente
+  function createIndicators() {
+    indicatorsContainer.innerHTML = "";
+    const totalSteps = getTotalSteps();
+
+    for (let i = 0; i < totalSteps; i++) {
+      const indicator = document.createElement("button");
+      indicator.classList.add("slider-indicator");
+      indicator.setAttribute("aria-label", `Ir para posição ${i + 1}`);
+      if (i === 0) indicator.classList.add("active");
+      indicator.addEventListener("click", () => goToSlide(i));
+      indicatorsContainer.appendChild(indicator);
+    }
+  }
+
+  createIndicators();
+
   // Atualizar indicadores ativos
   function updateIndicators() {
+    const indicators = document.querySelectorAll(".slider-indicator");
     indicators.forEach((indicator, index) => {
       indicator.classList.toggle("active", index === currentIndex);
     });
@@ -50,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const distance = targetScroll - startScroll;
     const startTime = performance.now();
 
-    // Easing function - easeOutCubic para movimento natural
     function easeOutCubic(t) {
       return 1 - Math.pow(1 - t, 3);
     }
@@ -66,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animate);
       } else {
         isAnimating = false;
-        updateCurrentIndexFromScroll();
       }
     }
 
@@ -77,46 +93,49 @@ document.addEventListener("DOMContentLoaded", () => {
   function goToSlide(index) {
     if (isAnimating) return;
 
+    const totalSteps = getTotalSteps();
     currentIndex = index;
+
     const slideWidth = getSlideWidth();
-    const targetScroll = index * slideWidth;
+    const maxScroll = getMaxScroll();
+
+    // Calcular o scroll alvo
+    let targetScroll = index * slideWidth;
+
+    // Garantir que não passe do máximo
+    if (targetScroll > maxScroll) {
+      targetScroll = maxScroll;
+    }
 
     smoothScrollTo(targetScroll);
     updateIndicators();
   }
 
-  // Navegar para o próximo slide (com loop)
+  // Próximo slide COM LOOP
   function nextSlide() {
     if (isAnimating) return;
 
-    if (currentIndex >= totalSlides - 1) {
-      // Está no último, volta para o primeiro
+    const totalSteps = getTotalSteps();
+
+    if (currentIndex >= totalSteps - 1) {
+      // Chegou no final -> volta pro início
       goToSlide(0);
     } else {
       goToSlide(currentIndex + 1);
     }
   }
 
-  // Navegar para o slide anterior (com loop)
+  // Slide anterior COM LOOP
   function prevSlide() {
     if (isAnimating) return;
 
+    const totalSteps = getTotalSteps();
+
     if (currentIndex <= 0) {
-      // Está no primeiro, vai para o último
-      goToSlide(totalSlides - 1);
+      // Está no início -> vai pro final
+      goToSlide(totalSteps - 1);
     } else {
       goToSlide(currentIndex - 1);
-    }
-  }
-
-  // Calcular índice atual baseado no scroll
-  function updateCurrentIndexFromScroll() {
-    const slideWidth = getSlideWidth();
-    const newIndex = Math.round(sliderTrack.scrollLeft / slideWidth);
-
-    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalSlides) {
-      currentIndex = newIndex;
-      updateIndicators();
     }
   }
 
@@ -159,8 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Snap para o slide mais próximo após drag
   function snapToNearestSlide() {
     const slideWidth = getSlideWidth();
+    const totalSteps = getTotalSteps();
     const nearestIndex = Math.round(sliderTrack.scrollLeft / slideWidth);
-    const clampedIndex = Math.max(0, Math.min(nearestIndex, totalSlides - 1));
+    const clampedIndex = Math.max(0, Math.min(nearestIndex, totalSteps - 1));
     goToSlide(clampedIndex);
   }
 
@@ -195,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 
-  // Scroll com wheel (horizontal)
+  // Scroll com wheel - COM LOOP
   sliderTrack.addEventListener(
     "wheel",
     (e) => {
@@ -215,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: false },
   );
 
-  // Navegação por teclado
+  // Navegação por teclado - COM LOOP
   document.addEventListener("keydown", (e) => {
     const projectsSection = document.querySelector("#myProjects");
     const rect = projectsSection.getBoundingClientRect();
@@ -237,7 +257,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      goToSlide(currentIndex);
+      createIndicators(); // Recria indicadores para novo tamanho
+      currentIndex = 0;
+      goToSlide(0);
     }, 150);
   });
 });

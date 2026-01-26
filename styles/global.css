@@ -8,9 +8,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 :root {
   /*Colors*/
-
   --red: #e3646e;
   --purple: #bb72e9;
   --blue: #3996db;
@@ -27,28 +30,47 @@ html {
   --title: "Asap", sans-serif;
   --subtitle: "Inconsolata", monospace;
   --text: "Maven Pro", sans-serif;
+
   /*fonts-values*/
-  --title-lg: 700 2rem/120% var(--title);
-  --title-md: 700 1.5rem/120% var(--title);
-  --title-sm: 700 1rem/120% var(--title);
-  --text-md: 400 1rem/140% var(--text);
-  --text-sm: 400 0.7rem/140% var(--text);
-  --subtitle-sm: 1rem/120% var(--subtitle);
-  --subtitle-md: 1.2rem/120% var(--subtitle);
+  --title-lg: 700 1.75rem/120% var(--title);
+  --title-md: 700 1.25rem/120% var(--title);
+  --title-sm: 700 0.875rem/120% var(--title);
+  --text-md: 400 0.875rem/140% var(--text);
+  --text-sm: 400 0.75rem/140% var(--text);
+  --subtitle-sm: 0.875rem/120% var(--subtitle);
+  --subtitle-md: 1rem/120% var(--subtitle);
 
   /*paddings*/
-  --px-xl: 2rem;
-  --px-lg: 1.5rem;
-  --px-md: 1rem;
+  --px-xl: 1.5rem;
+  --px-lg: 1rem;
+  --px-md: 0.75rem;
 
-  --py-sm: 0.4rem;
-  --py-md: 2rem;
-  --py-lg: 5rem;
+  --py-sm: 0.25rem;
+  --py-md: 1.5rem;
+  --py-lg: 3rem;
 }
 
-@media (width>=80em) {
+/* Tablet */
+@media (min-width: 640px) {
   :root {
-    /*fonts*/
+    --title-lg: 700 2.25rem/120% var(--title);
+    --title-md: 700 1.5rem/120% var(--title);
+    --title-sm: 700 1rem/120% var(--title);
+    --text-md: 400 1rem/140% var(--text);
+    --text-sm: 400 0.8rem/140% var(--text);
+    --subtitle-sm: 1rem/120% var(--subtitle);
+
+    --px-xl: 2rem;
+    --px-lg: 1.5rem;
+    --py-sm: 0.4rem;
+    --py-md: 2rem;
+    --py-lg: 4rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 80em) {
+  :root {
     --title-lg: 700 3.5rem/120% var(--title);
     --title-md: 700 1.5rem/120% var(--title);
     --title-sm: 700 1rem/120% var(--title);
@@ -56,7 +78,6 @@ html {
     --text-sm: 400 0.8rem/140% var(--text);
     --subtitle-sm: 0.9rem/120% var(--subtitle);
 
-    /*paddings*/
     --px-xl: 14rem;
     --px-lg: 2rem;
     --py-sm: 0.5rem;
