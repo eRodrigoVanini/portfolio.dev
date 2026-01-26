@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,17 +28,24 @@
             />
             <img class="code-icon" src="./assets/icons/code.svg" alt="" />
           </div>
-          <div class="about-texts px-lg">
+          <div class="about-texts">
             <p class="subtitle-sm py-sm">
-              Hello, World! Meu nome é
-              <span class="devname">Rodrigo Vanini</span> e sou
+              <span
+                >Hello!
+                <img
+                  class="img"
+                  src="./assets/icons/hand-icon.svg"
+                  alt="Ícone de uma mão acenando"
+              /></span>
+
+              <br /><br />
+              Meu nome é <br /><span class="devname">Rodrigo Vanini</span> e sou
             </p>
-            <h1 class="title-lg py-sm">Desenvolvedor Fullstack</h1>
             <p class="text-sm py-sm">
-              Transformo necessidades em aplicações reais, evolventes e
-              funcionais. Desenvolvo sistemas através da minha paixão pela
-              tecnologia, contribuindo com soluções inovadoras e eficazes para
-              desafios complexos.
+              Técnico em Informática estudando Análise e Desenvolvimento de
+              Sistemas.<br />
+              Combino código limpo, design responsivo e atenção aos detalhes
+              para entregar projetos que superam expectativas.
             </p>
           </div>
           <ul class="gap-16">
@@ -83,120 +90,156 @@
         </div>
       </div>
     </section>
+
     <section id="myProjects">
       <header class="headers">
         <h2>Meu trabalho</h2>
         <p class="py-sm">Veja os projetos em destaque</p>
       </header>
       <main>
-        <div class="container">
-          <ul>
-            <li class="card-projects">
-              <figure>
-                <img src="./assets/images/Thumbnail_Project-01.png" alt="" />
-                <figcaption>
-                  <h3>TravelGram</h3>
-                  <p>
-                    Rede social onde as pessoas mostram os registros de suas
-                    viagens pelo mundo
-                  </p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="card-projects">
-              <figure>
-                <img src="./assets/images/Thumbnail_Project-02.png" alt="" />
-                <figcaption>
-                  <h3>TechNews</h3>
-                  <p>
-                    Homepage de um portal de notícias sobre a área de tecnologia
-                  </p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="card-projects">
-              <figure>
-                <img src="./assets/images/Thumbnail_Project-03.png" alt="" />
-                <figcaption>
-                  <h3>Página de receita</h3>
-                  <p>Página com o passo a passo de uma receita para cupcakes</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="card-projects">
-              <figure>
-                <img src="./assets/images/Thumbnail_Project-04.png" alt="" />
-                <figcaption>
-                  <h3>Zingen</h3>
-                  <p>
-                    Landing Page completa e responsiva de um aplicativo de
-                    Karaokê
-                  </p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="card-projects">
-              <figure>
-                <img src="./assets/images/Thumbnail_Project-05.png" alt="" />
-                <figcaption>
-                  <h3>Refund</h3>
-                  <p>Um sistema para pedido e acompanhamento de reembolso</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="card-projects">
-              <figure>
-                <img src="./assets/images/Thumbnail_Project-06.png" alt="" />
-                <figcaption>
-                  <h3>Página de turismo</h3>
-                  <p>
-                    Página com as principais informações para quem quer viajar
-                    para Busan
-                  </p>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
+        <div class="slider-container">
+          <button
+            class="slider-btn slider-btn-prev"
+            aria-label="Projeto anterior"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div class="slider-wrapper">
+            <ul class="slider-track">
+              <li class="card-projects" data-repo="locus-api">
+                <figure>
+                  <a href="https://github.com/eRodrigoVanini/locus-api">
+                    <img
+                      src="./assets/images/locus-api_preview_00.png"
+                      alt="Imagem de pré-visualização do Locus API"
+                    />
+                    <figcaption>
+                      <h3>Locus API</h3>
+                      <p>
+                        API RESTful com arquitetura MVC que implementa operações
+                        CRUD para estudos de viabilidade de lotes urbanos.
+                      </p>
+                    </figcaption>
+                  </a>
+                </figure>
+              </li>
+              <li class="card-projects" data-repo="classroom">
+                <figure>
+                  <a href="https://erodrigovanini.github.io/classroom/">
+                    <img
+                      src="./assets/images/classr_preview_00.png"
+                      alt="Imagem de pré-visualização do Classroom Game"
+                    />
+                    <figcaption>
+                      <h3>Classroom Game</h3>
+                      <p>Project for a guessing game using React.js</p>
+                    </figcaption>
+                  </a>
+                </figure>
+              </li>
+              <li class="card-projects" data-repo="prompts-manager">
+                <figure>
+                  <a href="https://erodrigovanini.github.io/prompts-manager/">
+                    <img
+                      src="./assets/images/prompts_manager_preview_00.png"
+                      alt="Imagem de pré-visualização do Prompt Manager"
+                    />
+                    <figcaption>
+                      <h3>Prompt Manager</h3>
+                      <p>
+                        O Prompt Manager é um aplicativo web prático e intuitivo
+                        que permite organizar todos os seus prompts de IA em um
+                        só lugar.
+                      </p>
+                    </figcaption>
+                  </a>
+                </figure>
+              </li>
+              <li class="card-projects" data-repo="support-tickets">
+                <figure>
+                  <a href="https://erodrigovanini.github.io/support-tickets/">
+                    <img
+                      src="./assets/images/support_tickets_preview_00.png"
+                      alt="Imagem de pré-visualização da API de Tickets de Suporte"
+                    />
+                    <figcaption>
+                      <h3>API de Tickets de Suporte</h3>
+                      <p>
+                        Uma API para adicionar, ler, atualizar e excluir tickets
+                        de suporte usando Node.js.
+                      </p>
+                    </figcaption>
+                  </a>
+                </figure>
+              </li>
+              <li class="card-projects" data-repo="convert-template">
+                <figure>
+                  <a href="https://github.com/eRodrigoVanini/convert-template">
+                    <img
+                      src="./assets/images/convert_template_preview_00.png"
+                      alt="Imagem de pré-visualização do Convert Template"
+                    />
+                    <figcaption>
+                      <h3>Convert Template</h3>
+                      <p>
+                        Um aplicativo web de conversão de moedas desenvolvido
+                        com JavaScript puro, HTML5 e CSS3.
+                      </p>
+                    </figcaption>
+                  </a>
+                </figure>
+              </li>
+              <li class="card-projects" data-repo="social-links-page">
+                <figure>
+                  <a href="https://github.com/eRodrigoVanini/social-links-page">
+                    <img
+                      src="./assets/images/social_links_page_preview.png"
+                      alt="Imagem de pré-visualização do Social Link Page"
+                    />
+                    <figcaption>
+                      <h3>Social Link Page</h3>
+                      <p>
+                        O SocialLinks é um agregador de links que pode ser usado
+                        como um cartão de visitas online.
+                      </p>
+                    </figcaption>
+                  </a>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            class="slider-btn slider-btn-next"
+            aria-label="Próximo projeto"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
+
+        <div class="slider-indicators"></div>
       </main>
     </section>
-    <section id="myServices">
-      <header class="headers">
-        <h2>Meus serviços</h2>
-        <p>Como posso ajudar o seu negócio</p>
-      </header>
-      <main>
-        <ul class="ul">
-          <li class="card-services">
-            <figure>
-              <img src="./assets/icons/devices.svg" alt="" />
-              <figcaption>
-                <h3>Websites e Aplicativos</h3>
-                <p>Desenvolvimento de interfaces</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="card-services">
-            <figure>
-              <img src="./assets/icons/HardDrives.svg" alt="" />
-              <figcaption>
-                <h3>API e banco de dados</h3>
-                <p>Criação de serviços do sistema</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="card-services">
-            <figure>
-              <img src="./assets/icons/Infinity.svg" alt="" />
-              <figcaption>
-                <h3>DevOps</h3>
-                <p>Gestão e infraestrutura da aplicação</p>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-      </main>
-    </section>
+
     <section id="contacts">
       <header class="headers">
         <h2>Contato</h2>
@@ -219,7 +262,7 @@
           </li>
           <li>
             <a
-              href="#"
+              href="https://www.instagram.com/erodrigovanini/"
               target="_blank"
               class="bttn-socials"
               id="instagramButton"
@@ -242,7 +285,11 @@
             </a>
           </li>
           <li>
-            <a href="#" target="_blank" class="bttn-socials" id="emailButton">
+            <a
+              href="mailto:erodrigovanini@gmail.com"
+              class="bttn-socials"
+              id="emailButton"
+            >
               <img src="./assets/icons/EnvelopeSimple.svg" alt="" />
               <p>E-mail</p>
               <img src="./assets/icons/ArrowUpRight.svg" alt="" />
@@ -251,5 +298,7 @@
         </ul>
       </main>
     </section>
+    <script src="./scripts/searchRepos.js"></script>
+    <script src="./scripts/slider.js"></script>
   </body>
 </html>

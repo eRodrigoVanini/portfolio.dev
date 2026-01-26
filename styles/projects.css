@@ -2,33 +2,239 @@
   background-color: var(--gray-500);
   display: flex;
   flex-direction: column;
-
-  & h2 {
-    color: var(--red);
-  }
-
-  & ul {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-
-    gap: 1.2rem;
-    margin-bottom: 70px;
-  }
-
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  justify-content: center;
 }
 
-@media (width>=80em) {
+#myProjects h2 {
+  color: var(--red);
+}
+
+#myProjects main {
+  padding-bottom: 1.5rem;
+}
+
+/* Slider Container */
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* Slider Wrapper - área visível */
+.slider-wrapper {
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+/* Máscara de gradiente nas bordas para efeito visual */
+.slider-wrapper::before,
+.slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--gray-500), transparent);
+}
+
+.slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--gray-500), transparent);
+}
+
+/* Slider Track - trilha com os cards */
+.slider-track {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.slider-track:active {
+  cursor: grabbing;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-track .card-projects {
+  flex: 0 0 auto;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Botões de navegação */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-400);
+  background-color: rgba(22, 24, 29, 0.95);
+  color: var(--gray-200);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.slider-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.slider-btn:hover {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: var(--gray-100);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 20px rgba(227, 100, 110, 0.4);
+}
+
+.slider-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider-btn-prev {
+  left: 0.25rem;
+}
+
+.slider-btn-next {
+  right: 0.25rem;
+}
+
+/* Indicadores do slider */
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.slider-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--gray-400);
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-indicator:hover {
+  background-color: var(--gray-300);
+  transform: scale(1.3);
+}
+
+.slider-indicator.active {
+  background-color: var(--red);
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .slider-wrapper {
+    max-width: 680px;
+  }
+
+  .slider-container {
+    padding: 0 3.5rem;
+  }
+
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .slider-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slider-track {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .slider-indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slider-indicator.active {
+    width: 24px;
+  }
+
+  #myProjects main {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 80em) {
   #myProjects {
-    & ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-top: 30px;
-      margin-inline: auto;
-      gap: 12px;
-      width: 1040px;
-      height: 584px;
-    }
+    min-height: auto;
+  }
+
+  .slider-container {
+    max-width: 1280px;
+    padding: 0 4rem;
+  }
+
+  .slider-wrapper {
+    max-width: 1100px;
+  }
+
+  .slider-wrapper::before,
+  .slider-wrapper::after {
+    width: 60px;
+  }
+
+  .slider-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .slider-indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .slider-indicator.active {
+    width: 28px;
+  }
+
+  #myProjects main {
+    padding-bottom: 5rem;
   }
 }

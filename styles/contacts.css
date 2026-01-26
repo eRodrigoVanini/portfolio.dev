@@ -1,37 +1,67 @@
 section#contacts {
-  background-image: url(../assets/images/Background_Contacts.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: var(--gray-500);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  & h2 {
-    color: var(--purple);
+section#contacts h2 {
+  color: var(--purple);
+}
+
+section#contacts ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  align-items: center;
+}
+
+section#contacts ul li {
+  font: var(--text-sm);
+  color: var(--gray-200);
+  display: flex;
+  width: 260px;
+  height: 56px;
+  justify-content: center;
+}
+
+section#contacts main {
+  padding-bottom: 2rem;
+}
+
+section#contacts .headers {
+  padding: 1.5rem;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  section#contacts ul {
+    row-gap: 1rem;
   }
 
-  & ul {
-    display: flex;
-    flex-direction: column;
-    row-gap: 16px;
-    align-items: center;
-    & li {
-      font: var(--text-sm);
-      color: var(--gray-200);
-      display: flex;
-      width: 280px;
-      height: 68px;
-      justify-content: center;
-    }
+  section#contacts ul li {
+    width: 280px;
+    height: 68px;
   }
 
-  & main {
-    padding-bottom: 5rem;
+  section#contacts .headers {
+    padding: 3rem;
+  }
+
+  section#contacts main {
+    padding-bottom: 3rem;
   }
 }
 
-@media (width>=80em) {
+/* Desktop */
+@media (min-width: 80em) {
   section#contacts {
-    & main {
-      padding-bottom: 8rem;
-    }
+    min-height: auto;
+  }
+
+  section#contacts main {
+    padding-bottom: 8rem;
   }
 }
