@@ -21,7 +21,9 @@
 
   padding: 0.9rem;
 
-  transition: transform 200ms ease, box-shadow 200ms ease,
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
     border-color 200ms ease;
 }
 
@@ -57,31 +59,6 @@
   border-color: var(--gray-300);
 }
 
-.card-services {
-  border: solid 2px var(--gray-500);
-  border-radius: 12px;
-
-  width: 280px;
-  height: 155px;
-
-  padding: 20px;
-
-  & img {
-    margin-bottom: 20px;
-  }
-
-  & h3 {
-    font: var(--title-sm);
-    color: var(--gray-100);
-    margin-bottom: 10px;
-  }
-
-  & p {
-    font: var(--text-sm);
-    color: var(--gray-300);
-  }
-}
-
 @media (width >= 80em) {
   .card-skills {
     background-color: var(--gray-400);
@@ -97,12 +74,6 @@
     .card-projects {
       width: 100%;
       padding: 1rem;
-    }
-
-    .card-services {
-      width: 280px;
-      height: 155px;
-      padding: 20px 0 20px 20px;
     }
   }
 }
