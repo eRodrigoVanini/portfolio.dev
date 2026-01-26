@@ -1,9 +1,5 @@
 section#contacts {
-  background-image: url(../assets/images/Background_Contacts.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
+  background-color: var(--gray-500);
   & h2 {
     color: var(--purple);
   }

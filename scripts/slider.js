@@ -41,12 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Atualizar estado dos botões
-  function updateButtons() {
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= totalSlides - 1;
-  }
-
   // Animação suave customizada com easing
   function smoothScrollTo(targetScroll, duration = 400) {
     if (isAnimating) return;
@@ -83,16 +77,36 @@ document.addEventListener("DOMContentLoaded", () => {
   function goToSlide(index) {
     if (isAnimating) return;
 
-    // Limitar índice
-    index = Math.max(0, Math.min(index, totalSlides - 1));
-
     currentIndex = index;
     const slideWidth = getSlideWidth();
     const targetScroll = index * slideWidth;
 
     smoothScrollTo(targetScroll);
     updateIndicators();
-    updateButtons();
+  }
+
+  // Navegar para o próximo slide (com loop)
+  function nextSlide() {
+    if (isAnimating) return;
+
+    if (currentIndex >= totalSlides - 1) {
+      // Está no último, volta para o primeiro
+      goToSlide(0);
+    } else {
+      goToSlide(currentIndex + 1);
+    }
+  }
+
+  // Navegar para o slide anterior (com loop)
+  function prevSlide() {
+    if (isAnimating) return;
+
+    if (currentIndex <= 0) {
+      // Está no primeiro, vai para o último
+      goToSlide(totalSlides - 1);
+    } else {
+      goToSlide(currentIndex - 1);
+    }
   }
 
   // Calcular índice atual baseado no scroll
@@ -103,18 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalSlides) {
       currentIndex = newIndex;
       updateIndicators();
-      updateButtons();
     }
   }
 
   // Eventos dos botões
-  prevBtn.addEventListener("click", () => {
-    goToSlide(currentIndex - 1);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    goToSlide(currentIndex + 1);
-  });
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
 
   // Drag to scroll - Mouse
   sliderTrack.addEventListener("mousedown", (e) => {
@@ -144,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - sliderTrack.offsetLeft;
-    const walk = (x - startX) * 1.5; // Multiplicador de velocidade
+    const walk = (x - startX) * 1.5;
     sliderTrack.scrollLeft = scrollLeft - walk;
   });
 
@@ -152,7 +160,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function snapToNearestSlide() {
     const slideWidth = getSlideWidth();
     const nearestIndex = Math.round(sliderTrack.scrollLeft / slideWidth);
-    goToSlide(nearestIndex);
+    const clampedIndex = Math.max(0, Math.min(nearestIndex, totalSlides - 1));
+    goToSlide(clampedIndex);
   }
 
   // Touch events para mobile
@@ -191,17 +200,15 @@ document.addEventListener("DOMContentLoaded", () => {
     "wheel",
     (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        // Scroll horizontal nativo
         return;
       }
 
-      // Converter scroll vertical em horizontal
       if (Math.abs(e.deltaY) > 10) {
         e.preventDefault();
         if (e.deltaY > 0) {
-          goToSlide(currentIndex + 1);
+          nextSlide();
         } else {
-          goToSlide(currentIndex - 1);
+          prevSlide();
         }
       }
     },
@@ -217,10 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isVisible && !isAnimating) {
       if (e.key === "ArrowLeft") {
         e.preventDefault();
-        goToSlide(currentIndex - 1);
+        prevSlide();
       } else if (e.key === "ArrowRight") {
         e.preventDefault();
-        goToSlide(currentIndex + 1);
+        nextSlide();
       }
     }
   });
@@ -233,7 +240,4 @@ document.addEventListener("DOMContentLoaded", () => {
       goToSlide(currentIndex);
     }, 150);
   });
-
-  // Inicializar estado dos botões
-  updateButtons();
 });

@@ -1,9 +1,6 @@
 /* Background da seção */
 section#about {
-  background-image: url(../assets/images/Background_Intro.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--gray-500);
 }
 
 /* Imagem de perfil */
@@ -39,7 +36,6 @@ section#about {
   margin-top: 0.5rem;
 
   position: relative;
-
 }
 
 .about-texts span:nth-child(1) {
