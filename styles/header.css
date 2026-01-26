@@ -4,6 +4,7 @@ section#about {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 section#about > .container {
@@ -85,9 +86,7 @@ section#about > .container {
 
 /* Ícone de próxima seção */
 img.next-section {
-  margin-top: 1.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  margin-top: 4.5rem;
   animation: bounce 2s infinite;
 }
 
